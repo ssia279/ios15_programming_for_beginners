@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -44,8 +45,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSI-19-Hr4">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSI-19-Hr4">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="7" minimumInteritemSpacing="0.0" id="rHo-8N-RBT">
                                     <size key="itemSize" width="177" height="177"/>
@@ -60,8 +62,42 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cMu-5j-nxs">
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="177"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VE3-tl-6T4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="137"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YL3-G1-8Na">
+                                                            <rect key="frame" x="0.0" y="0.0" width="177" height="137"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="YL3-G1-8Na" firstAttribute="leading" secondItem="VE3-tl-6T4" secondAttribute="leading" id="FHs-UG-W0H"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YL3-G1-8Na" secondAttribute="trailing" id="MgO-CU-B43"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YL3-G1-8Na" secondAttribute="bottom" id="hfn-A4-5Wb"/>
+                                                        <constraint firstItem="YL3-G1-8Na" firstAttribute="top" secondItem="VE3-tl-6T4" secondAttribute="top" id="w5Y-2K-npk"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geJ-pv-aIw">
+                                                    <rect key="frame" x="8" y="146" width="161" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="8Il-Or-Qnp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="geJ-pv-aIw" secondAttribute="trailing" constant="8" id="73a-G1-fta"/>
+                                                <constraint firstItem="VE3-tl-6T4" firstAttribute="leading" secondItem="cMu-5j-nxs" secondAttribute="leading" id="Bt1-Y6-ZdK"/>
+                                                <constraint firstAttribute="bottom" secondItem="VE3-tl-6T4" secondAttribute="bottom" constant="40" id="EQA-Zh-xc4"/>
+                                                <constraint firstItem="geJ-pv-aIw" firstAttribute="leading" secondItem="cMu-5j-nxs" secondAttribute="leading" constant="8" id="N3m-gH-APF"/>
+                                                <constraint firstAttribute="trailing" secondItem="VE3-tl-6T4" secondAttribute="trailing" id="ZdY-7S-Mxd"/>
+                                                <constraint firstItem="geJ-pv-aIw" firstAttribute="top" secondItem="VE3-tl-6T4" secondAttribute="bottom" constant="9" id="hCe-L2-f1E"/>
+                                                <constraint firstItem="VE3-tl-6T4" firstAttribute="top" secondItem="cMu-5j-nxs" secondAttribute="top" id="rRU-CI-plg"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="bKi-CM-hLM" kind="show" id="LzV-cI-9KW"/>
                                         </connections>
@@ -71,15 +107,41 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-5e-2vZ">
-                                            <rect key="frame" x="275" y="35" width="67" height="31"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Crj-QR-wWo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                            <connections>
-                                                <segue destination="qiB-1U-x1Y" kind="presentation" id="MLx-Yb-h2j"/>
-                                            </connections>
-                                        </button>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE SELECT A LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36I-oX-eAm">
+                                                    <rect key="frame" x="8" y="24" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <color key="textColor" name="LetsEat Light Gray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EXPLORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzm-2G-Pkx">
+                                                    <rect key="frame" x="8" y="45" width="255" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-5e-2vZ">
+                                                    <rect key="frame" x="271" y="50" width="96" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="btn-location"/>
+                                                    <connections>
+                                                        <segue destination="qiB-1U-x1Y" kind="presentation" id="MLx-Yb-h2j"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SmF-Pn-5nZ">
+                                                    <rect key="frame" x="8" y="89" width="359" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="LetsEat Light Gray"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
                                     </subviews>
                                 </collectionReusableView>
                                 <connections>
@@ -90,12 +152,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6YA-8R-xLQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="OSI-19-Hr4" firstAttribute="leading" secondItem="6YA-8R-xLQ" secondAttribute="leading" id="D8J-lA-a2w"/>
-                            <constraint firstItem="6YA-8R-xLQ" firstAttribute="bottom" secondItem="OSI-19-Hr4" secondAttribute="bottom" id="dhD-bm-uMk"/>
-                            <constraint firstItem="OSI-19-Hr4" firstAttribute="top" secondItem="6YA-8R-xLQ" secondAttribute="top" id="gAq-vL-Kho"/>
-                            <constraint firstItem="6YA-8R-xLQ" firstAttribute="trailing" secondItem="OSI-19-Hr4" secondAttribute="trailing" id="qh0-3V-KLc"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pbk-37-0qi"/>
                     <connections>
@@ -361,8 +417,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn-location" width="96" height="25"/>
         <image name="icon-explore-on" width="35" height="23"/>
         <image name="icon-map-on" width="16" height="22"/>
+        <namedColor name="LetsEat Light Gray">
+            <color red="0.68627450980392157" green="0.68627450980392157" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
